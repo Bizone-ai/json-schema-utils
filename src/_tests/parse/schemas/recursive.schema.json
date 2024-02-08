@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "BType": {
+      "type": "object",
+      "properties": {
+        "a": {
+          "$ref": "#/definitions/AType"
+        }
+      }
+    },
+    "AType": {
+      "type": "object",
+      "properties": {
+        "b": {
+          "$ref": "#/definitions/BType"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "properties": {
+    "a": {
+      "$ref": "#/definitions/AType"
+    },
+    "b": {
+      "$ref": "#/definitions/BType"
+    },
+    "id": {
+      "type": "string"
+    },
+    "no_props": {
+      "type": "object"
+    },
+    "array": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "item": { "type": "string" }
+        }
+      }
+    },
+    "obj": {
+      "type": "object",
+      "properties": {
+        "nested": { "type": "string" }
+      }
+    }
+  }
+}

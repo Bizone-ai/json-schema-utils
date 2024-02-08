@@ -1,0 +1,44 @@
+{
+  "name": "@nlighten/json-schema-utils",
+  "description": "Various utilities for handling JSON Schemas (parse, join, generate, samples)",
+  "version": "1.0.0",
+  "main": "dist/json-schema-utils.js",
+  "umd:main": "dist/json-schema-utils.umd.js",
+  "module": "dist/json-schema-utils.module.js",
+  "typings": "dist/index.d.ts",
+  "source": "src/index.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/json-schema-utils.js",
+      "import": "./dist/json-schema-utils.module.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "sideEffects": false,
+  "scripts": {
+    "build": "microbundle",
+    "test": "vitest --no-watch",
+    "test:watch": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nlighten/json-schema-utils.git"
+  },
+  "files": [
+    "dist/"
+  ],
+  "keywords": [
+    "json-schema"
+  ],
+  "author": "Eli Sherer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nlighten/json-schema-utils/issues"
+  },
+  "homepage": "https://github.com/nlighten/json-schema-utils#readme",
+  "devDependencies": {
+    "microbundle": "^0.15.1",
+    "typescript": "^5.3.3",
+    "vitest": "1.2.2"
+  }
+}

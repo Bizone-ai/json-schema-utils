@@ -1,0 +1,143 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`generateJSONSchemaFromValue > array item type - multiple 1`] = `
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "int_array": {
+      "items": [
+        {
+          "type": "integer",
+        },
+        {
+          "type": "string",
+        },
+        {
+          "type": "boolean",
+        },
+      ],
+      "type": "array",
+    },
+  },
+  "type": "object",
+}
+`;
+
+exports[`generateJSONSchemaFromValue > array item type - single 1`] = `
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "int_array": {
+      "items": {
+        "type": "integer",
+      },
+      "type": "array",
+    },
+  },
+  "type": "object",
+}
+`;
+
+exports[`generateJSONSchemaFromValue > should return the correct schema for an example (with required) 1`] = `
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "cookies": {
+      "items": {
+        "properties": {
+          "eli": {
+            "type": "integer",
+          },
+        },
+        "required": [
+          "eli",
+        ],
+        "type": "object",
+      },
+      "type": "array",
+    },
+    "eli": {
+      "type": "integer",
+    },
+    "sherer": {
+      "type": "boolean",
+    },
+    "suri": {
+      "properties": {
+        "ben": {
+          "type": "object",
+        },
+        "dahan": {
+          "type": "number",
+        },
+      },
+      "required": [
+        "ben",
+        "dahan",
+      ],
+      "type": "object",
+    },
+  },
+  "required": [
+    "eli",
+    "sherer",
+    "suri",
+    "cookies",
+  ],
+  "type": "object",
+}
+`;
+
+exports[`generateJSONSchemaFromValue > should return the correct schema for an example (without required) 1`] = `
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "array_of_2_types": {
+      "items": [
+        {
+          "type": "string",
+        },
+        {
+          "type": "integer",
+        },
+      ],
+      "type": "array",
+    },
+    "array_untyped": {
+      "type": "array",
+    },
+    "cookies": {
+      "items": {
+        "properties": {
+          "eli": {
+            "type": "integer",
+          },
+        },
+        "type": "object",
+      },
+      "type": "array",
+    },
+    "eli": {
+      "type": "integer",
+    },
+    "null": {
+      "type": "null",
+    },
+    "sherer": {
+      "type": "boolean",
+    },
+    "suri": {
+      "properties": {
+        "ben": {
+          "type": "object",
+        },
+        "dahan": {
+          "type": "number",
+        },
+      },
+      "type": "object",
+    },
+  },
+  "type": "object",
+}
+`;

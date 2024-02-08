@@ -1,0 +1,1809 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`parseSchema > no schema 1`] = `
+{
+  "paths": [],
+  "pointers": {},
+  "sample": undefined,
+  "schema": null,
+  "workSchema": null,
+}
+`;
+
+exports[`parseSchema > sample - array of objects 1`] = `
+[
+  {},
+]
+`;
+
+exports[`parseSchema > sample - test all types 1`] = `
+{
+  "age": 0.5,
+  "all": "",
+  "children": [
+    {},
+  ],
+  "id": 0,
+  "male": false,
+  "name": "",
+  "obj": {},
+  "reserved": null,
+  "spouse": {
+    "id": 0,
+  },
+  "unknown": undefined,
+  "untyped": [],
+}
+`;
+
+exports[`parseSchema > should return correct recursive (with sample) 1`] = `
+{
+  "paths": [
+    {
+      "$path": "",
+      "$pointer": "/",
+      "$required": true,
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "definitions": {
+        "AType": {
+          "properties": {
+            "b": {
+              "$comment": "BType",
+              "properties": {
+                "a": {
+                  "type": "object",
+                },
+              },
+              "type": "object",
+            },
+          },
+          "type": "object",
+        },
+        "BType": {
+          "properties": {
+            "a": {
+              "type": "object",
+            },
+          },
+          "type": "object",
+        },
+      },
+      "properties": {
+        "a": {
+          "$comment": "AType",
+          "properties": {
+            "b": {
+              "$comment": "BType",
+              "properties": {
+                "a": {
+                  "type": "object",
+                },
+              },
+              "type": "object",
+            },
+          },
+          "type": "object",
+        },
+        "array": {
+          "items": {
+            "properties": {
+              "item": {
+                "type": "string",
+              },
+            },
+            "type": "object",
+          },
+          "type": "array",
+        },
+        "b": {
+          "$comment": "BType",
+          "properties": {
+            "a": {
+              "type": "object",
+            },
+          },
+          "type": "object",
+        },
+        "id": {
+          "type": "string",
+        },
+        "no_props": {
+          "type": "object",
+        },
+        "obj": {
+          "properties": {
+            "nested": {
+              "type": "string",
+            },
+          },
+          "type": "object",
+        },
+      },
+      "type": "object",
+    },
+    {
+      "$comment": "AType",
+      "$path": "a",
+      "$pointer": "/a",
+      "properties": {
+        "b": {
+          "$comment": "BType",
+          "properties": {
+            "a": {
+              "type": "object",
+            },
+          },
+          "type": "object",
+        },
+      },
+      "type": "object",
+    },
+    {
+      "$comment": "BType",
+      "$path": "a.b",
+      "$pointer": "/a/b",
+      "properties": {
+        "a": {
+          "type": "object",
+        },
+      },
+      "type": "object",
+    },
+    {
+      "$path": "a.b.a",
+      "$pointer": "/a/b/a",
+      "type": "object",
+    },
+    {
+      "$comment": "BType",
+      "$path": "b",
+      "$pointer": "/b",
+      "properties": {
+        "a": {
+          "type": "object",
+        },
+      },
+      "type": "object",
+    },
+    {
+      "$path": "b.a",
+      "$pointer": "/b/a",
+      "type": "object",
+    },
+    {
+      "$path": "id",
+      "$pointer": "/id",
+      "type": "string",
+    },
+    {
+      "$path": "no_props",
+      "$pointer": "/no_props",
+      "type": "object",
+    },
+    {
+      "$path": "array",
+      "$pointer": "/array",
+      "items": {
+        "properties": {
+          "item": {
+            "type": "string",
+          },
+        },
+        "type": "object",
+      },
+      "type": "array",
+    },
+    {
+      "$path": "array[]",
+      "$pointer": "/array/*",
+      "properties": {
+        "item": {
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+    {
+      "$path": "array[].item",
+      "$pointer": "/array/*/item",
+      "type": "string",
+    },
+    {
+      "$path": "obj",
+      "$pointer": "/obj",
+      "properties": {
+        "nested": {
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+    {
+      "$path": "obj.nested",
+      "$pointer": "/obj/nested",
+      "type": "string",
+    },
+  ],
+  "pointers": {
+    "/": {
+      "$path": "",
+      "$pointer": "/",
+      "$required": true,
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "definitions": {
+        "AType": {
+          "properties": {
+            "b": {
+              "$comment": "BType",
+              "properties": {
+                "a": {
+                  "type": "object",
+                },
+              },
+              "type": "object",
+            },
+          },
+          "type": "object",
+        },
+        "BType": {
+          "properties": {
+            "a": {
+              "type": "object",
+            },
+          },
+          "type": "object",
+        },
+      },
+      "properties": {
+        "a": {
+          "$comment": "AType",
+          "properties": {
+            "b": {
+              "$comment": "BType",
+              "properties": {
+                "a": {
+                  "type": "object",
+                },
+              },
+              "type": "object",
+            },
+          },
+          "type": "object",
+        },
+        "array": {
+          "items": {
+            "properties": {
+              "item": {
+                "type": "string",
+              },
+            },
+            "type": "object",
+          },
+          "type": "array",
+        },
+        "b": {
+          "$comment": "BType",
+          "properties": {
+            "a": {
+              "type": "object",
+            },
+          },
+          "type": "object",
+        },
+        "id": {
+          "type": "string",
+        },
+        "no_props": {
+          "type": "object",
+        },
+        "obj": {
+          "properties": {
+            "nested": {
+              "type": "string",
+            },
+          },
+          "type": "object",
+        },
+      },
+      "type": "object",
+    },
+    "/a": {
+      "$comment": "AType",
+      "$path": "a",
+      "$pointer": "/a",
+      "properties": {
+        "b": {
+          "$comment": "BType",
+          "properties": {
+            "a": {
+              "type": "object",
+            },
+          },
+          "type": "object",
+        },
+      },
+      "type": "object",
+    },
+    "/a/b": {
+      "$comment": "BType",
+      "$path": "a.b",
+      "$pointer": "/a/b",
+      "properties": {
+        "a": {
+          "type": "object",
+        },
+      },
+      "type": "object",
+    },
+    "/a/b/a": {
+      "$path": "a.b.a",
+      "$pointer": "/a/b/a",
+      "type": "object",
+    },
+    "/array": {
+      "$path": "array",
+      "$pointer": "/array",
+      "items": {
+        "properties": {
+          "item": {
+            "type": "string",
+          },
+        },
+        "type": "object",
+      },
+      "type": "array",
+    },
+    "/array/*": {
+      "$path": "array[]",
+      "$pointer": "/array/*",
+      "properties": {
+        "item": {
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+    "/array/*/item": {
+      "$path": "array[].item",
+      "$pointer": "/array/*/item",
+      "type": "string",
+    },
+    "/b": {
+      "$comment": "BType",
+      "$path": "b",
+      "$pointer": "/b",
+      "properties": {
+        "a": {
+          "type": "object",
+        },
+      },
+      "type": "object",
+    },
+    "/b/a": {
+      "$path": "b.a",
+      "$pointer": "/b/a",
+      "type": "object",
+    },
+    "/id": {
+      "$path": "id",
+      "$pointer": "/id",
+      "type": "string",
+    },
+    "/no_props": {
+      "$path": "no_props",
+      "$pointer": "/no_props",
+      "type": "object",
+    },
+    "/obj": {
+      "$path": "obj",
+      "$pointer": "/obj",
+      "properties": {
+        "nested": {
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+    "/obj/nested": {
+      "$path": "obj.nested",
+      "$pointer": "/obj/nested",
+      "type": "string",
+    },
+  },
+  "sample": {
+    "a": {
+      "b": {
+        "a": {},
+      },
+    },
+    "array": [
+      {
+        "item": "",
+      },
+    ],
+    "b": {
+      "a": {},
+    },
+    "id": "",
+    "no_props": {},
+    "obj": {
+      "nested": "",
+    },
+  },
+  "schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+      "AType": {
+        "properties": {
+          "b": {
+            "$ref": "#/definitions/BType",
+          },
+        },
+        "type": "object",
+      },
+      "BType": {
+        "properties": {
+          "a": {
+            "$ref": "#/definitions/AType",
+          },
+        },
+        "type": "object",
+      },
+    },
+    "properties": {
+      "a": {
+        "$ref": "#/definitions/AType",
+      },
+      "array": {
+        "items": {
+          "properties": {
+            "item": {
+              "type": "string",
+            },
+          },
+          "type": "object",
+        },
+        "type": "array",
+      },
+      "b": {
+        "$ref": "#/definitions/BType",
+      },
+      "id": {
+        "type": "string",
+      },
+      "no_props": {
+        "type": "object",
+      },
+      "obj": {
+        "properties": {
+          "nested": {
+            "type": "string",
+          },
+        },
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+  "warnings": [],
+  "workSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "properties": {
+      "a": {
+        "$comment": "AType",
+        "properties": {
+          "b": {
+            "$comment": "BType",
+            "properties": {
+              "a": {
+                "type": "object",
+              },
+            },
+            "type": "object",
+          },
+        },
+        "type": "object",
+      },
+      "array": {
+        "items": {
+          "properties": {
+            "item": {
+              "type": "string",
+            },
+          },
+          "type": "object",
+        },
+        "type": "array",
+      },
+      "b": {
+        "$comment": "BType",
+        "properties": {
+          "a": {
+            "type": "object",
+          },
+        },
+        "type": "object",
+      },
+      "id": {
+        "type": "string",
+      },
+      "no_props": {
+        "type": "object",
+      },
+      "obj": {
+        "properties": {
+          "nested": {
+            "type": "string",
+          },
+        },
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+}
+`;
+
+exports[`parseSchema > should return correct recursive 1`] = `
+{
+  "paths": [
+    {
+      "$path": "",
+      "$pointer": "/",
+      "$required": true,
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "definitions": {
+        "AType": {
+          "properties": {
+            "b": {
+              "$comment": "BType",
+              "properties": {
+                "a": {
+                  "type": "object",
+                },
+              },
+              "type": "object",
+            },
+          },
+          "type": "object",
+        },
+        "BType": {
+          "properties": {
+            "a": {
+              "type": "object",
+            },
+          },
+          "type": "object",
+        },
+      },
+      "properties": {
+        "a": {
+          "$comment": "AType",
+          "properties": {
+            "b": {
+              "$comment": "BType",
+              "properties": {
+                "a": {
+                  "type": "object",
+                },
+              },
+              "type": "object",
+            },
+          },
+          "type": "object",
+        },
+        "array": {
+          "items": {
+            "properties": {
+              "item": {
+                "type": "string",
+              },
+            },
+            "type": "object",
+          },
+          "type": "array",
+        },
+        "b": {
+          "$comment": "BType",
+          "properties": {
+            "a": {
+              "type": "object",
+            },
+          },
+          "type": "object",
+        },
+        "id": {
+          "type": "string",
+        },
+        "no_props": {
+          "type": "object",
+        },
+        "obj": {
+          "properties": {
+            "nested": {
+              "type": "string",
+            },
+          },
+          "type": "object",
+        },
+      },
+      "type": "object",
+    },
+    {
+      "$comment": "AType",
+      "$path": "a",
+      "$pointer": "/a",
+      "properties": {
+        "b": {
+          "$comment": "BType",
+          "properties": {
+            "a": {
+              "type": "object",
+            },
+          },
+          "type": "object",
+        },
+      },
+      "type": "object",
+    },
+    {
+      "$comment": "BType",
+      "$path": "a.b",
+      "$pointer": "/a/b",
+      "properties": {
+        "a": {
+          "type": "object",
+        },
+      },
+      "type": "object",
+    },
+    {
+      "$path": "a.b.a",
+      "$pointer": "/a/b/a",
+      "type": "object",
+    },
+    {
+      "$comment": "BType",
+      "$path": "b",
+      "$pointer": "/b",
+      "properties": {
+        "a": {
+          "type": "object",
+        },
+      },
+      "type": "object",
+    },
+    {
+      "$path": "b.a",
+      "$pointer": "/b/a",
+      "type": "object",
+    },
+    {
+      "$path": "id",
+      "$pointer": "/id",
+      "type": "string",
+    },
+    {
+      "$path": "no_props",
+      "$pointer": "/no_props",
+      "type": "object",
+    },
+    {
+      "$path": "array",
+      "$pointer": "/array",
+      "items": {
+        "properties": {
+          "item": {
+            "type": "string",
+          },
+        },
+        "type": "object",
+      },
+      "type": "array",
+    },
+    {
+      "$path": "array[]",
+      "$pointer": "/array/*",
+      "properties": {
+        "item": {
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+    {
+      "$path": "array[].item",
+      "$pointer": "/array/*/item",
+      "type": "string",
+    },
+    {
+      "$path": "obj",
+      "$pointer": "/obj",
+      "properties": {
+        "nested": {
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+    {
+      "$path": "obj.nested",
+      "$pointer": "/obj/nested",
+      "type": "string",
+    },
+  ],
+  "pointers": {
+    "/": {
+      "$path": "",
+      "$pointer": "/",
+      "$required": true,
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "definitions": {
+        "AType": {
+          "properties": {
+            "b": {
+              "$comment": "BType",
+              "properties": {
+                "a": {
+                  "type": "object",
+                },
+              },
+              "type": "object",
+            },
+          },
+          "type": "object",
+        },
+        "BType": {
+          "properties": {
+            "a": {
+              "type": "object",
+            },
+          },
+          "type": "object",
+        },
+      },
+      "properties": {
+        "a": {
+          "$comment": "AType",
+          "properties": {
+            "b": {
+              "$comment": "BType",
+              "properties": {
+                "a": {
+                  "type": "object",
+                },
+              },
+              "type": "object",
+            },
+          },
+          "type": "object",
+        },
+        "array": {
+          "items": {
+            "properties": {
+              "item": {
+                "type": "string",
+              },
+            },
+            "type": "object",
+          },
+          "type": "array",
+        },
+        "b": {
+          "$comment": "BType",
+          "properties": {
+            "a": {
+              "type": "object",
+            },
+          },
+          "type": "object",
+        },
+        "id": {
+          "type": "string",
+        },
+        "no_props": {
+          "type": "object",
+        },
+        "obj": {
+          "properties": {
+            "nested": {
+              "type": "string",
+            },
+          },
+          "type": "object",
+        },
+      },
+      "type": "object",
+    },
+    "/a": {
+      "$comment": "AType",
+      "$path": "a",
+      "$pointer": "/a",
+      "properties": {
+        "b": {
+          "$comment": "BType",
+          "properties": {
+            "a": {
+              "type": "object",
+            },
+          },
+          "type": "object",
+        },
+      },
+      "type": "object",
+    },
+    "/a/b": {
+      "$comment": "BType",
+      "$path": "a.b",
+      "$pointer": "/a/b",
+      "properties": {
+        "a": {
+          "type": "object",
+        },
+      },
+      "type": "object",
+    },
+    "/a/b/a": {
+      "$path": "a.b.a",
+      "$pointer": "/a/b/a",
+      "type": "object",
+    },
+    "/array": {
+      "$path": "array",
+      "$pointer": "/array",
+      "items": {
+        "properties": {
+          "item": {
+            "type": "string",
+          },
+        },
+        "type": "object",
+      },
+      "type": "array",
+    },
+    "/array/*": {
+      "$path": "array[]",
+      "$pointer": "/array/*",
+      "properties": {
+        "item": {
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+    "/array/*/item": {
+      "$path": "array[].item",
+      "$pointer": "/array/*/item",
+      "type": "string",
+    },
+    "/b": {
+      "$comment": "BType",
+      "$path": "b",
+      "$pointer": "/b",
+      "properties": {
+        "a": {
+          "type": "object",
+        },
+      },
+      "type": "object",
+    },
+    "/b/a": {
+      "$path": "b.a",
+      "$pointer": "/b/a",
+      "type": "object",
+    },
+    "/id": {
+      "$path": "id",
+      "$pointer": "/id",
+      "type": "string",
+    },
+    "/no_props": {
+      "$path": "no_props",
+      "$pointer": "/no_props",
+      "type": "object",
+    },
+    "/obj": {
+      "$path": "obj",
+      "$pointer": "/obj",
+      "properties": {
+        "nested": {
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+    "/obj/nested": {
+      "$path": "obj.nested",
+      "$pointer": "/obj/nested",
+      "type": "string",
+    },
+  },
+  "sample": undefined,
+  "schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+      "AType": {
+        "properties": {
+          "b": {
+            "$ref": "#/definitions/BType",
+          },
+        },
+        "type": "object",
+      },
+      "BType": {
+        "properties": {
+          "a": {
+            "$ref": "#/definitions/AType",
+          },
+        },
+        "type": "object",
+      },
+    },
+    "properties": {
+      "a": {
+        "$ref": "#/definitions/AType",
+      },
+      "array": {
+        "items": {
+          "properties": {
+            "item": {
+              "type": "string",
+            },
+          },
+          "type": "object",
+        },
+        "type": "array",
+      },
+      "b": {
+        "$ref": "#/definitions/BType",
+      },
+      "id": {
+        "type": "string",
+      },
+      "no_props": {
+        "type": "object",
+      },
+      "obj": {
+        "properties": {
+          "nested": {
+            "type": "string",
+          },
+        },
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+  "warnings": [],
+  "workSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "properties": {
+      "a": {
+        "$comment": "AType",
+        "properties": {
+          "b": {
+            "$comment": "BType",
+            "properties": {
+              "a": {
+                "type": "object",
+              },
+            },
+            "type": "object",
+          },
+        },
+        "type": "object",
+      },
+      "array": {
+        "items": {
+          "properties": {
+            "item": {
+              "type": "string",
+            },
+          },
+          "type": "object",
+        },
+        "type": "array",
+      },
+      "b": {
+        "$comment": "BType",
+        "properties": {
+          "a": {
+            "type": "object",
+          },
+        },
+        "type": "object",
+      },
+      "id": {
+        "type": "string",
+      },
+      "no_props": {
+        "type": "object",
+      },
+      "obj": {
+        "properties": {
+          "nested": {
+            "type": "string",
+          },
+        },
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+}
+`;
+
+exports[`parseSchema > should return correct with refs 1`] = `
+{
+  "paths": [
+    {
+      "$defs": {
+        "A": {
+          "properties": {
+            "amt": {
+              "type": "number",
+            },
+            "ccy": {
+              "pattern": "([A-Z]{3,3})",
+              "type": "string",
+            },
+            "usd": {
+              "$comment": "UE",
+              "properties": {
+                "amt": {
+                  "type": "number",
+                },
+                "q": {
+                  "minLength": 1,
+                  "type": "string",
+                },
+              },
+              "required": [
+                "amt",
+                "q",
+              ],
+              "type": "object",
+            },
+          },
+          "required": [
+            "amt",
+            "ccy",
+          ],
+          "type": "object",
+        },
+        "Entry": {
+          "properties": {
+            "am": {
+              "$comment": "A",
+              "properties": {
+                "amt": {
+                  "type": "number",
+                },
+                "ccy": {
+                  "pattern": "([A-Z]{3,3})",
+                  "type": "string",
+                },
+                "usd": {
+                  "$comment": "UE",
+                  "properties": {
+                    "amt": {
+                      "type": "number",
+                    },
+                    "q": {
+                      "minLength": 1,
+                      "type": "string",
+                    },
+                  },
+                  "required": [
+                    "amt",
+                    "q",
+                  ],
+                  "type": "object",
+                },
+              },
+              "required": [
+                "amt",
+                "ccy",
+              ],
+              "type": "object",
+            },
+          },
+          "required": [
+            "am",
+          ],
+          "type": "object",
+        },
+        "UE": {
+          "properties": {
+            "amt": {
+              "type": "number",
+            },
+            "q": {
+              "minLength": 1,
+              "type": "string",
+            },
+          },
+          "required": [
+            "amt",
+            "q",
+          ],
+          "type": "object",
+        },
+      },
+      "$path": "",
+      "$pointer": "/",
+      "$required": true,
+      "$schema": "https://json-schema.org/draft/2019-09/schema",
+      "properties": {
+        "entries": {
+          "items": {
+            "$comment": "Entry",
+            "properties": {
+              "am": {
+                "$comment": "A",
+                "properties": {
+                  "amt": {
+                    "type": "number",
+                  },
+                  "ccy": {
+                    "pattern": "([A-Z]{3,3})",
+                    "type": "string",
+                  },
+                  "usd": {
+                    "$comment": "UE",
+                    "properties": {
+                      "amt": {
+                        "type": "number",
+                      },
+                      "q": {
+                        "minLength": 1,
+                        "type": "string",
+                      },
+                    },
+                    "required": [
+                      "amt",
+                      "q",
+                    ],
+                    "type": "object",
+                  },
+                },
+                "required": [
+                  "amt",
+                  "ccy",
+                ],
+                "type": "object",
+              },
+            },
+            "required": [
+              "am",
+            ],
+            "type": "object",
+          },
+          "title": "entries",
+          "type": "array",
+        },
+      },
+      "type": "object",
+    },
+    {
+      "$path": "entries",
+      "$pointer": "/entries",
+      "items": {
+        "$comment": "Entry",
+        "properties": {
+          "am": {
+            "$comment": "A",
+            "properties": {
+              "amt": {
+                "type": "number",
+              },
+              "ccy": {
+                "pattern": "([A-Z]{3,3})",
+                "type": "string",
+              },
+              "usd": {
+                "$comment": "UE",
+                "properties": {
+                  "amt": {
+                    "type": "number",
+                  },
+                  "q": {
+                    "minLength": 1,
+                    "type": "string",
+                  },
+                },
+                "required": [
+                  "amt",
+                  "q",
+                ],
+                "type": "object",
+              },
+            },
+            "required": [
+              "amt",
+              "ccy",
+            ],
+            "type": "object",
+          },
+        },
+        "required": [
+          "am",
+        ],
+        "type": "object",
+      },
+      "title": "entries",
+      "type": "array",
+    },
+    {
+      "$comment": "Entry",
+      "$path": "entries[]",
+      "$pointer": "/entries/*",
+      "properties": {
+        "am": {
+          "$comment": "A",
+          "properties": {
+            "amt": {
+              "type": "number",
+            },
+            "ccy": {
+              "pattern": "([A-Z]{3,3})",
+              "type": "string",
+            },
+            "usd": {
+              "$comment": "UE",
+              "properties": {
+                "amt": {
+                  "type": "number",
+                },
+                "q": {
+                  "minLength": 1,
+                  "type": "string",
+                },
+              },
+              "required": [
+                "amt",
+                "q",
+              ],
+              "type": "object",
+            },
+          },
+          "required": [
+            "amt",
+            "ccy",
+          ],
+          "type": "object",
+        },
+      },
+      "required": [
+        "am",
+      ],
+      "type": "object",
+    },
+    {
+      "$comment": "A",
+      "$path": "entries[].am",
+      "$pointer": "/entries/*/am",
+      "$required": true,
+      "properties": {
+        "amt": {
+          "type": "number",
+        },
+        "ccy": {
+          "pattern": "([A-Z]{3,3})",
+          "type": "string",
+        },
+        "usd": {
+          "$comment": "UE",
+          "properties": {
+            "amt": {
+              "type": "number",
+            },
+            "q": {
+              "minLength": 1,
+              "type": "string",
+            },
+          },
+          "required": [
+            "amt",
+            "q",
+          ],
+          "type": "object",
+        },
+      },
+      "required": [
+        "amt",
+        "ccy",
+      ],
+      "type": "object",
+    },
+    {
+      "$path": "entries[].am.amt",
+      "$pointer": "/entries/*/am/amt",
+      "$required": true,
+      "type": "number",
+    },
+    {
+      "$path": "entries[].am.ccy",
+      "$pointer": "/entries/*/am/ccy",
+      "$required": true,
+      "pattern": "([A-Z]{3,3})",
+      "type": "string",
+    },
+    {
+      "$comment": "UE",
+      "$path": "entries[].am.usd",
+      "$pointer": "/entries/*/am/usd",
+      "properties": {
+        "amt": {
+          "type": "number",
+        },
+        "q": {
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "amt",
+        "q",
+      ],
+      "type": "object",
+    },
+    {
+      "$path": "entries[].am.usd.amt",
+      "$pointer": "/entries/*/am/usd/amt",
+      "$required": true,
+      "type": "number",
+    },
+    {
+      "$path": "entries[].am.usd.q",
+      "$pointer": "/entries/*/am/usd/q",
+      "$required": true,
+      "minLength": 1,
+      "type": "string",
+    },
+  ],
+  "pointers": {
+    "/": {
+      "$defs": {
+        "A": {
+          "properties": {
+            "amt": {
+              "type": "number",
+            },
+            "ccy": {
+              "pattern": "([A-Z]{3,3})",
+              "type": "string",
+            },
+            "usd": {
+              "$comment": "UE",
+              "properties": {
+                "amt": {
+                  "type": "number",
+                },
+                "q": {
+                  "minLength": 1,
+                  "type": "string",
+                },
+              },
+              "required": [
+                "amt",
+                "q",
+              ],
+              "type": "object",
+            },
+          },
+          "required": [
+            "amt",
+            "ccy",
+          ],
+          "type": "object",
+        },
+        "Entry": {
+          "properties": {
+            "am": {
+              "$comment": "A",
+              "properties": {
+                "amt": {
+                  "type": "number",
+                },
+                "ccy": {
+                  "pattern": "([A-Z]{3,3})",
+                  "type": "string",
+                },
+                "usd": {
+                  "$comment": "UE",
+                  "properties": {
+                    "amt": {
+                      "type": "number",
+                    },
+                    "q": {
+                      "minLength": 1,
+                      "type": "string",
+                    },
+                  },
+                  "required": [
+                    "amt",
+                    "q",
+                  ],
+                  "type": "object",
+                },
+              },
+              "required": [
+                "amt",
+                "ccy",
+              ],
+              "type": "object",
+            },
+          },
+          "required": [
+            "am",
+          ],
+          "type": "object",
+        },
+        "UE": {
+          "properties": {
+            "amt": {
+              "type": "number",
+            },
+            "q": {
+              "minLength": 1,
+              "type": "string",
+            },
+          },
+          "required": [
+            "amt",
+            "q",
+          ],
+          "type": "object",
+        },
+      },
+      "$path": "",
+      "$pointer": "/",
+      "$required": true,
+      "$schema": "https://json-schema.org/draft/2019-09/schema",
+      "properties": {
+        "entries": {
+          "items": {
+            "$comment": "Entry",
+            "properties": {
+              "am": {
+                "$comment": "A",
+                "properties": {
+                  "amt": {
+                    "type": "number",
+                  },
+                  "ccy": {
+                    "pattern": "([A-Z]{3,3})",
+                    "type": "string",
+                  },
+                  "usd": {
+                    "$comment": "UE",
+                    "properties": {
+                      "amt": {
+                        "type": "number",
+                      },
+                      "q": {
+                        "minLength": 1,
+                        "type": "string",
+                      },
+                    },
+                    "required": [
+                      "amt",
+                      "q",
+                    ],
+                    "type": "object",
+                  },
+                },
+                "required": [
+                  "amt",
+                  "ccy",
+                ],
+                "type": "object",
+              },
+            },
+            "required": [
+              "am",
+            ],
+            "type": "object",
+          },
+          "title": "entries",
+          "type": "array",
+        },
+      },
+      "type": "object",
+    },
+    "/entries": {
+      "$path": "entries",
+      "$pointer": "/entries",
+      "items": {
+        "$comment": "Entry",
+        "properties": {
+          "am": {
+            "$comment": "A",
+            "properties": {
+              "amt": {
+                "type": "number",
+              },
+              "ccy": {
+                "pattern": "([A-Z]{3,3})",
+                "type": "string",
+              },
+              "usd": {
+                "$comment": "UE",
+                "properties": {
+                  "amt": {
+                    "type": "number",
+                  },
+                  "q": {
+                    "minLength": 1,
+                    "type": "string",
+                  },
+                },
+                "required": [
+                  "amt",
+                  "q",
+                ],
+                "type": "object",
+              },
+            },
+            "required": [
+              "amt",
+              "ccy",
+            ],
+            "type": "object",
+          },
+        },
+        "required": [
+          "am",
+        ],
+        "type": "object",
+      },
+      "title": "entries",
+      "type": "array",
+    },
+    "/entries/*": {
+      "$comment": "Entry",
+      "$path": "entries[]",
+      "$pointer": "/entries/*",
+      "properties": {
+        "am": {
+          "$comment": "A",
+          "properties": {
+            "amt": {
+              "type": "number",
+            },
+            "ccy": {
+              "pattern": "([A-Z]{3,3})",
+              "type": "string",
+            },
+            "usd": {
+              "$comment": "UE",
+              "properties": {
+                "amt": {
+                  "type": "number",
+                },
+                "q": {
+                  "minLength": 1,
+                  "type": "string",
+                },
+              },
+              "required": [
+                "amt",
+                "q",
+              ],
+              "type": "object",
+            },
+          },
+          "required": [
+            "amt",
+            "ccy",
+          ],
+          "type": "object",
+        },
+      },
+      "required": [
+        "am",
+      ],
+      "type": "object",
+    },
+    "/entries/*/am": {
+      "$comment": "A",
+      "$path": "entries[].am",
+      "$pointer": "/entries/*/am",
+      "$required": true,
+      "properties": {
+        "amt": {
+          "type": "number",
+        },
+        "ccy": {
+          "pattern": "([A-Z]{3,3})",
+          "type": "string",
+        },
+        "usd": {
+          "$comment": "UE",
+          "properties": {
+            "amt": {
+              "type": "number",
+            },
+            "q": {
+              "minLength": 1,
+              "type": "string",
+            },
+          },
+          "required": [
+            "amt",
+            "q",
+          ],
+          "type": "object",
+        },
+      },
+      "required": [
+        "amt",
+        "ccy",
+      ],
+      "type": "object",
+    },
+    "/entries/*/am/amt": {
+      "$path": "entries[].am.amt",
+      "$pointer": "/entries/*/am/amt",
+      "$required": true,
+      "type": "number",
+    },
+    "/entries/*/am/ccy": {
+      "$path": "entries[].am.ccy",
+      "$pointer": "/entries/*/am/ccy",
+      "$required": true,
+      "pattern": "([A-Z]{3,3})",
+      "type": "string",
+    },
+    "/entries/*/am/usd": {
+      "$comment": "UE",
+      "$path": "entries[].am.usd",
+      "$pointer": "/entries/*/am/usd",
+      "properties": {
+        "amt": {
+          "type": "number",
+        },
+        "q": {
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "amt",
+        "q",
+      ],
+      "type": "object",
+    },
+    "/entries/*/am/usd/amt": {
+      "$path": "entries[].am.usd.amt",
+      "$pointer": "/entries/*/am/usd/amt",
+      "$required": true,
+      "type": "number",
+    },
+    "/entries/*/am/usd/q": {
+      "$path": "entries[].am.usd.q",
+      "$pointer": "/entries/*/am/usd/q",
+      "$required": true,
+      "minLength": 1,
+      "type": "string",
+    },
+  },
+  "sample": undefined,
+  "schema": {
+    "$defs": {
+      "A": {
+        "properties": {
+          "amt": {
+            "type": "number",
+          },
+          "ccy": {
+            "pattern": "([A-Z]{3,3})",
+            "type": "string",
+          },
+          "usd": {
+            "$ref": "#/$defs/UE",
+          },
+        },
+        "required": [
+          "amt",
+          "ccy",
+        ],
+        "type": "object",
+      },
+      "Entry": {
+        "properties": {
+          "am": {
+            "$ref": "#/$defs/A",
+          },
+        },
+        "required": [
+          "am",
+        ],
+        "type": "object",
+      },
+      "UE": {
+        "properties": {
+          "amt": {
+            "type": "number",
+          },
+          "q": {
+            "minLength": 1,
+            "type": "string",
+          },
+        },
+        "required": [
+          "amt",
+          "q",
+        ],
+        "type": "object",
+      },
+    },
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "properties": {
+      "entries": {
+        "items": {
+          "$ref": "#/$defs/Entry",
+        },
+        "title": "entries",
+        "type": "array",
+      },
+    },
+    "type": "object",
+  },
+  "warnings": [],
+  "workSchema": {
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "properties": {
+      "entries": {
+        "items": {
+          "$comment": "Entry",
+          "properties": {
+            "am": {
+              "$comment": "A",
+              "properties": {
+                "amt": {
+                  "type": "number",
+                },
+                "ccy": {
+                  "pattern": "([A-Z]{3,3})",
+                  "type": "string",
+                },
+                "usd": {
+                  "$comment": "UE",
+                  "properties": {
+                    "amt": {
+                      "type": "number",
+                    },
+                    "q": {
+                      "minLength": 1,
+                      "type": "string",
+                    },
+                  },
+                  "required": [
+                    "amt",
+                    "q",
+                  ],
+                  "type": "object",
+                },
+              },
+              "required": [
+                "amt",
+                "ccy",
+              ],
+              "type": "object",
+            },
+          },
+          "required": [
+            "am",
+          ],
+          "type": "object",
+        },
+        "title": "entries",
+        "type": "array",
+      },
+    },
+    "type": "object",
+  },
+}
+`;

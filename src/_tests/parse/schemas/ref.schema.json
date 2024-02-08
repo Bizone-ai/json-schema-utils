@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$defs": {
+    "A": {
+      "type": "object",
+      "properties": {
+        "amt": {
+          "type": "number"
+        },
+        "ccy": {
+          "type": "string",
+          "pattern": "([A-Z]{3,3})"
+        },
+        "usd": {
+          "$ref": "#/$defs/UE"
+        }
+      },
+      "required": [
+        "amt",
+        "ccy"
+      ]
+    },
+    "Entry": {
+      "type": "object",
+      "properties": {
+        "am": {
+          "$ref": "#/$defs/A"
+        }
+      },
+      "required": [
+        "am"
+      ]
+    },
+    "UE": {
+      "type": "object",
+      "properties": {
+        "amt": {
+          "type": "number"
+        },
+        "q": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "amt",
+        "q"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "entries": {
+      "title": "entries",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Entry"
+      }
+    }
+  }
+}
