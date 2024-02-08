@@ -1,5 +1,7 @@
 # json-schema-utils
 
+![](https://img.shields.io/npm/v/@nlighten/json-schema-utils.svg)
+
 Various utilities for handling JSON Schemas (parse, join, generate, samples)
 
 # Installation
