@@ -1,7 +1,7 @@
 {
   "name": "@nlighten/json-schema-utils",
   "description": "Various utilities for handling JSON Schemas (parse, join, generate, samples)",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/json-schema-utils.js",
   "umd:main": "dist/json-schema-utils.umd.js",
   "module": "dist/json-schema-utils.module.js",

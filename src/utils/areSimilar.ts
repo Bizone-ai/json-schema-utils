@@ -12,6 +12,7 @@ function isPrimitive(object: any) {
     case "undefined":
     case "boolean":
     case "number":
+    case "bigint":
     case "string":
     case "symbol":
       return true;

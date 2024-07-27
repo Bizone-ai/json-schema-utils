@@ -87,7 +87,7 @@ const _internalParseSchema = (
   if (context.options?.outputSample) {
     sampleValue = getSampleValue(context, schema);
     if (key != null) {
-      if (!Object.hasOwn(context.sample, key)) {
+      if (!Object.prototype.hasOwnProperty.call(context.sample, key)) {
         context.sample[key] = sampleValue;
       }
     } else {
