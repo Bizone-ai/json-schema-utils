@@ -98,14 +98,16 @@ const _internalParseSchema = (
   const simplifiedType = extractSimplifiedType(context, schema);
 
   const prop: ParsedSchemaProperty = {
-    $path: context.path,
-    $pointer: context.pointer || "/",
-
     ...schema,
     type: simplifiedType as any, // might stay empty, don't assume type
+
+    $path: context.path,
+    $pointer: context.pointer || "/",
   };
   if (is_required) {
     prop.$required = is_required;
+  } else {
+    delete prop.$required;
   }
 
   if (schema.type === "array") {

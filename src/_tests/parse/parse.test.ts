@@ -2,6 +2,7 @@ import { describe, test, expect } from "vitest";
 import { parseSchema } from "../../parse/parse";
 import recursiveSchema from "./schemas/recursive.schema.json";
 import refSchema from "./schemas/ref.schema.json";
+import {ParsedSchemaProperty} from "../../parse/ParsedSchema";
 
 describe("parseSchema", () => {
   test("no schema", () => {
@@ -97,5 +98,31 @@ describe("parseSchema", () => {
     );
 
     expect(paths.sample).toBe("hello");
+  });
+
+  test("sample - ignore existing $path", () => {
+    const paths = parseSchema(
+      {
+        $path: "baaahh",
+        $pointer: "/asdasd/asdasd",
+        $required: false,
+        type: "string",
+        enum: ["hello", "world"],
+      } as ParsedSchemaProperty,
+      { outputSample: true },
+    );
+
+    expect(paths.paths).toEqual([
+      {
+        $path: "",
+        $pointer: "/",
+        $required: true,
+        enum: [
+          "hello",
+            "world",
+          ],
+        type: "string",
+      },
+    ]);
   });
 });
