@@ -1,4 +1,7 @@
+import rfdc from "rfdc";
 import { TypeSchema } from "../types/TypeSchema";
+
+export const deepClone = rfdc();
 
 export type ParsedSchemaProperty = {
   // special
@@ -9,7 +12,7 @@ export type ParsedSchemaProperty = {
 export type ParsedSchemaProperties = ParsedSchemaProperty[];
 
 export const cleanParsedSchemaProperty = (ps: ParsedSchemaProperty): TypeSchema => {
-  const clone: TypeSchema = structuredClone(ps);
+  const clone: TypeSchema = deepClone(ps);
   delete (clone as any).$path;
   delete (clone as any).$pointer;
   delete (clone as any).$required;

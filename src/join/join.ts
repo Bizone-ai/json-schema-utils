@@ -10,6 +10,8 @@ export type JoinOptions = {
   draft?: string;
 };
 
+const hasOwn = Object.prototype.hasOwnProperty;
+
 /**
  * Generate a JSON Schema from a list of PathDescriptors
  * @param pathsDescriptors List of paths
@@ -102,10 +104,10 @@ export const join = (pathsDescriptors: PathDescriptor[], options: JoinOptions = 
       }
     }
     if (container) {
-      if (Object.hasOwn(container, "path")) {
+      if (hasOwn.call(container, "path")) {
         delete container.path;
       }
-      if (Object.hasOwn(container, "required") && !Array.isArray(container.required)) {
+      if (hasOwn.call(container, "required") && !Array.isArray(container.required)) {
         delete container.required;
       }
       container = Object.assign({}, container, { type: "object" }, type);

@@ -12,6 +12,7 @@ export {
   type ParsedSchemaProperties,
   type ParsedSchemaProperty,
   cleanParsedSchemaProperty,
+  deepClone
 } from "./parse/ParsedSchema";
 
 export {

@@ -1,5 +1,5 @@
 import { TypeSchema, JsonSchemaType } from "../types/TypeSchema";
-import { ParsedSchema, ParsedSchemaProperties, ParsedSchemaProperty } from "./ParsedSchema";
+import {deepClone, ParsedSchema, ParsedSchemaProperties, ParsedSchemaProperty} from "./ParsedSchema";
 import ParseContext from "./ParseContext";
 import dereference from "./dereference";
 import { ParsingOptions } from "./ParsingOptions";
@@ -164,7 +164,7 @@ const _internalParseSchema = (
 
 export const parseSchema = (schema: TypeSchema, options: ParsingOptions = {}): ParsedSchema => {
   if (!schema) return { schema, workSchema: schema, paths: [], pointers: {}, sample: undefined };
-  const workSchema = structuredClone(schema);
+  const workSchema = deepClone(schema);
   const context = new ParseContext(workSchema, {}, options);
   const paths = _internalParseSchema(context, null, workSchema, true);
   delete workSchema.$defs; // should be de-referenced

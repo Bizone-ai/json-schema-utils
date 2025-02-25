@@ -1,24 +1,18 @@
 {
   "name": "@nlighten/json-schema-utils",
   "description": "Various utilities for handling JSON Schemas (parse, join, generate, samples)",
-  "version": "1.0.3",
-  "main": "dist/json-schema-utils.js",
-  "umd:main": "dist/json-schema-utils.umd.js",
-  "module": "dist/json-schema-utils.module.js",
-  "typings": "dist/index.d.ts",
+  "version": "1.1.0",
+  "main": "./dist/index.js",
   "source": "src/index.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/json-schema-utils.js",
-      "import": "./dist/json-schema-utils.module.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
+  "exports": "./dist/index.js",
   "sideEffects": false,
   "scripts": {
-    "build": "microbundle",
+    "build": "tsc --build",
     "test": "vitest --no-watch",
     "test:watch": "vitest"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",
@@ -37,8 +31,10 @@
   },
   "homepage": "https://github.com/nlighten-oss/json-schema-utils#readme",
   "devDependencies": {
-    "microbundle": "^0.15.1",
     "typescript": "^5.3.3",
     "vitest": "1.2.2"
+  },
+  "dependencies": {
+    "rfdc": "^1.4.1"
   }
 }
