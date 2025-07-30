@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bizone-ai/json-schema-utils.git"
+    "url": "https://github.com/Bizone-ai/json-schema-utils"
   },
   "files": [
     "dist/"
@@ -27,9 +27,9 @@
   "author": "Eli Sherer",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bizone-ai/json-schema-utils/issues"
+    "url": "https://github.com/Bizone-ai/json-schema-utils/issues"
   },
-  "homepage": "https://github.com/bizone-ai/json-schema-utils#readme",
+  "homepage": "https://github.com/Bizone-ai/json-schema-utils#readme",
   "devDependencies": {
     "typescript": "^5.3.3",
     "vitest": "3.0.5"
