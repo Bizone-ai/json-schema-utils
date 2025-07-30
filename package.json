@@ -1,5 +1,5 @@
 {
-  "name": "@nlighten/json-schema-utils",
+  "name": "@bizone-ai/json-schema-utils",
   "description": "Various utilities for handling JSON Schemas (parse, join, generate, samples)",
   "version": "1.1.0",
   "main": "./dist/index.js",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nlighten-oss/json-schema-utils.git"
+    "url": "git+https://github.com/bizone-ai/json-schema-utils.git"
   },
   "files": [
     "dist/"
@@ -27,12 +27,12 @@
   "author": "Eli Sherer",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nlighten-oss/json-schema-utils/issues"
+    "url": "https://github.com/bizone-ai/json-schema-utils/issues"
   },
-  "homepage": "https://github.com/nlighten-oss/json-schema-utils#readme",
+  "homepage": "https://github.com/bizone-ai/json-schema-utils#readme",
   "devDependencies": {
     "typescript": "^5.3.3",
-    "vitest": "1.2.2"
+    "vitest": "3.0.5"
   },
   "dependencies": {
     "rfdc": "^1.4.1"
