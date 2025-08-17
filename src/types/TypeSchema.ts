@@ -1,27 +1,53 @@
 export type JsonSchemaType = "string" | "number" | "integer" | "object" | "array" | "boolean" | "null";
 
 export type TypeSchema = {
+  // core
+  $id?: string;
   $schema?: string;
-
+  $ref?: string;
+  $comment?: string;
   $defs?: Record<string, any>;
   definitions?: Record<string, any>;
 
-  type: JsonSchemaType | JsonSchemaType[];
-  title?: string;
-  $comment?: string;
-  description?: string;
+  // applicator
+  allOf?: TypeSchema[];
+  anyOf?: TypeSchema[];
+  oneOf?: TypeSchema[];
+  if?: TypeSchema;
+  then?: TypeSchema;
+  else?: TypeSchema;
+  not?: TypeSchema;
+  properties?: Record<string, TypeSchema>;
+  additionalProperties?: boolean | TypeSchema;
+  patternProperties?: Record<string, TypeSchema>;
+  items?: TypeSchema | TypeSchema[];
+
+  // validation
+  type?: JsonSchemaType | JsonSchemaType[];
   enum?: string[];
   const?: string;
-  format?: string;
+  maxLength?: number;
+  minLength?: number;
   pattern?: string;
-  properties?: Record<string, TypeSchema>;
-  items?: TypeSchema | TypeSchema[];
+  exclusiveMaximum?: number;
+  exclusiveMinimum?: number;
+  maximum?: number;
+  minimum?: number;
+  multipleOf?: number;
+  maxProperties?: number;
+  minProperties?: number;
   required?: string[];
-  anyOf?: TypeSchema[];
-  allOf?: TypeSchema[];
-  oneOf?: TypeSchema[];
-  example?: any;
+  maxItems?: number;
+  minItems?: number;
+  uniqueItems?: boolean;
+  // meta data
+  title?: string;
+  description?: string;
   default?: any;
-  $ref?: string;
-  additionalProperties?: boolean | TypeSchema;
+  deprecated?: boolean;
+  examples?: any[];
+  readOnly?: boolean;
+  writeOnly?: boolean;
+  // format annotation
+  format?: string;
 };

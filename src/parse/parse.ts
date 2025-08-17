@@ -8,7 +8,7 @@ const getSampleValue = (context: ParseContext, def: TypeSchema): any => {
   if (Array.isArray(def.oneOf) && def.oneOf.length > 0) {
     return getSampleValue(context, def.oneOf[0]);
   }
-  const _defaultValue = def.example ?? def.default ?? def.const;
+  const _defaultValue = def.examples?.[0] ?? def.default ?? def.const;
   if (typeof _defaultValue !== "undefined") {
     return _defaultValue;
   }
@@ -48,7 +48,7 @@ const getSampleValue = (context: ParseContext, def: TypeSchema): any => {
   return undefined;
 };
 
-const isNonStringPrimitiveType = (type: JsonSchemaType | JsonSchemaType[]) =>
+const isNonStringPrimitiveType = (type?: JsonSchemaType | JsonSchemaType[]) =>
   type === "number" || type === "integer" || type === "boolean";
 
 const extractSimplifiedType = (context: ParseContext, field: TypeSchema) => {
