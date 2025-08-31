@@ -125,4 +125,30 @@ describe("parseSchema", () => {
       },
     ]);
   });
+
+  test("sample - from example", () => {
+    const paths = parseSchema(
+      {
+        "$schema": "https://json-schema.org/draft/2019-09/schema",
+        "type": "object",
+        "properties": {
+          "num": {
+            "type": "number",
+            "examples": [42]
+          },
+          "bool": {
+            "type": "boolean",
+            "examples": [true]
+          }
+        }
+      },
+      { outputSample: true },
+    );
+
+    expect(paths.sample).toStrictEqual({
+      num: 42,
+      bool: true,
+    });
+  });
+
 });
