@@ -32,6 +32,12 @@ const queryByRef = (obj: any, ref: string) => {
  */
 const dereference = (context: ParseContext, schema: TypeSchema): TypeSchema => {
   const definitionNames: string[] = [];
+  if (Array.isArray(schema.anyOf) && schema.anyOf.length === 2 && schema.anyOf.some(s => s.type === "null")) {
+    // break anyOf[x,"null"]
+    const nonNullSchema = schema.anyOf.find(s => s.type !== "null")!;
+    delete schema.anyOf;
+    Object.assign(schema, nonNullSchema);
+  }
   if (Array.isArray(schema.allOf)) {
     // combine all of 'allOf' one by one
     Object.assign(

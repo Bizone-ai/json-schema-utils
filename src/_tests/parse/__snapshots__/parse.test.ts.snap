@@ -10,6 +10,257 @@ exports[`parseSchema > no schema 1`] = `
 }
 `;
 
+exports[`parseSchema > optionals 1`] = `
+{
+  "paths": [
+    {
+      "$defs": {
+        "OptionalName": {
+          "properties": {
+            "name": {
+              "title": "Provider",
+              "type": "string",
+            },
+          },
+          "type": "object",
+        },
+      },
+      "$path": "",
+      "$pointer": "/",
+      "$required": true,
+      "$schema": "https://json-schema.org/draft/2019-09/schema",
+      "additionalProperties": true,
+      "properties": {
+        "a": {
+          "$comment": "OptionalName",
+          "properties": {
+            "name": {
+              "title": "Provider",
+              "type": "string",
+            },
+          },
+          "type": "object",
+        },
+        "b": {
+          "$comment": "OptionalName",
+          "properties": {
+            "name": {
+              "title": "Provider",
+              "type": "string",
+            },
+          },
+          "type": "object",
+        },
+      },
+      "required": [
+        "a",
+      ],
+      "type": "object",
+    },
+    {
+      "$comment": "OptionalName",
+      "$path": "a",
+      "$pointer": "/a",
+      "$required": true,
+      "properties": {
+        "name": {
+          "title": "Provider",
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+    {
+      "$path": "a.name",
+      "$pointer": "/a/name",
+      "title": "Provider",
+      "type": "string",
+    },
+    {
+      "$comment": "OptionalName",
+      "$path": "b",
+      "$pointer": "/b",
+      "properties": {
+        "name": {
+          "title": "Provider",
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+    {
+      "$path": "b.name",
+      "$pointer": "/b/name",
+      "title": "Provider",
+      "type": "string",
+    },
+  ],
+  "pointers": {
+    "/": {
+      "$defs": {
+        "OptionalName": {
+          "properties": {
+            "name": {
+              "title": "Provider",
+              "type": "string",
+            },
+          },
+          "type": "object",
+        },
+      },
+      "$path": "",
+      "$pointer": "/",
+      "$required": true,
+      "$schema": "https://json-schema.org/draft/2019-09/schema",
+      "additionalProperties": true,
+      "properties": {
+        "a": {
+          "$comment": "OptionalName",
+          "properties": {
+            "name": {
+              "title": "Provider",
+              "type": "string",
+            },
+          },
+          "type": "object",
+        },
+        "b": {
+          "$comment": "OptionalName",
+          "properties": {
+            "name": {
+              "title": "Provider",
+              "type": "string",
+            },
+          },
+          "type": "object",
+        },
+      },
+      "required": [
+        "a",
+      ],
+      "type": "object",
+    },
+    "/a": {
+      "$comment": "OptionalName",
+      "$path": "a",
+      "$pointer": "/a",
+      "$required": true,
+      "properties": {
+        "name": {
+          "title": "Provider",
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+    "/a/name": {
+      "$path": "a.name",
+      "$pointer": "/a/name",
+      "title": "Provider",
+      "type": "string",
+    },
+    "/b": {
+      "$comment": "OptionalName",
+      "$path": "b",
+      "$pointer": "/b",
+      "properties": {
+        "name": {
+          "title": "Provider",
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+    "/b/name": {
+      "$path": "b.name",
+      "$pointer": "/b/name",
+      "title": "Provider",
+      "type": "string",
+    },
+  },
+  "sample": {
+    "a": {
+      "name": "",
+    },
+    "b": {
+      "name": "",
+    },
+  },
+  "schema": {
+    "$defs": {
+      "OptionalName": {
+        "properties": {
+          "name": {
+            "anyOf": [
+              {
+                "type": "string",
+              },
+              {
+                "type": "null",
+              },
+            ],
+            "title": "Provider",
+          },
+        },
+        "type": "object",
+      },
+    },
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "properties": {
+      "a": {
+        "$ref": "#/$defs/OptionalName",
+      },
+      "b": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/OptionalName",
+          },
+          {
+            "type": "null",
+          },
+        ],
+      },
+    },
+    "required": [
+      "a",
+    ],
+    "type": "object",
+  },
+  "warnings": [],
+  "workSchema": {
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "properties": {
+      "a": {
+        "$comment": "OptionalName",
+        "properties": {
+          "name": {
+            "title": "Provider",
+            "type": "string",
+          },
+        },
+        "type": "object",
+      },
+      "b": {
+        "$comment": "OptionalName",
+        "properties": {
+          "name": {
+            "title": "Provider",
+            "type": "string",
+          },
+        },
+        "type": "object",
+      },
+    },
+    "required": [
+      "a",
+    ],
+    "type": "object",
+  },
+}
+`;
+
 exports[`parseSchema > sample - array of objects 1`] = `
 [
   {},

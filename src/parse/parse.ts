@@ -62,6 +62,8 @@ const extractSimplifiedType = (context: ParseContext, field: TypeSchema) => {
     const type1 = dereference(context, field.anyOf[1]);
     if (type0.type === "string" && isNonStringPrimitiveType(type1.type)) type = type1.type;
     else if (type1.type === "string" && isNonStringPrimitiveType(type0.type)) type = type0.type;
+    else if (type0.type === "null") type = type1.type;
+    else if (type1.type === "null") type = type0.type;
   } else if (Array.isArray(type) && type.length === 2 && type.includes("null")) {
     return type.find((x: string) => x !== "null");
   }

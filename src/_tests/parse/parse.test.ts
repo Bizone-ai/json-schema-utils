@@ -2,6 +2,7 @@ import { describe, test, expect } from "vitest";
 import { parseSchema } from "../../parse/parse";
 import recursiveSchema from "./schemas/recursive.schema.json";
 import refSchema from "./schemas/ref.schema.json";
+import optionals from "./schemas/optionals.schema.json";
 import {ParsedSchemaProperty} from "../../parse/ParsedSchema";
 
 describe("parseSchema", () => {
@@ -149,6 +150,15 @@ describe("parseSchema", () => {
       num: 42,
       bool: true,
     });
+  });
+
+  test("optionals", () => {
+    const paths = parseSchema(
+      optionals as any,
+      { outputSample: true },
+    );
+
+    expect(paths).toMatchSnapshot();
   });
 
 });

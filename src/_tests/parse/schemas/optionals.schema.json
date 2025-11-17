@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$defs": {
+    "OptionalName": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Provider"
+        }
+      }
+    }
+  },
+  "properties": {
+    "a": {
+      "$ref": "#/$defs/OptionalName"
+    },
+    "b": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/OptionalName"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "additionalProperties": true,
+  "type": "object",
+  "required": [
+    "a"
+  ]
+}
